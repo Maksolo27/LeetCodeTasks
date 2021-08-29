@@ -16,7 +16,7 @@ public class Solution {
         System.out.println(makingLargeIsland(grid));
     }
 
-    private static List<Integer> makingLargeIsland(int grid[][]){
+    private static int makingLargeIsland(int[][] grid){
         List<Integer> islands = new ArrayList<>();
         int currentIslandArea = 0;
         boolean isOneSwitshed = false;
@@ -43,7 +43,7 @@ public class Solution {
             }
         }
         islands.add(currentIslandArea);
-        return islands;
+        return (int) islands.stream().mapToDouble(x -> x).sum();
     }
 
 
